@@ -1,1 +1,26 @@
-<h1>Current price of BTC is: {{cp}}</h1>
+<mat-card>
+    <h1>BTC/USDT: {{cp}}</h1>
+    <p>Data is feteched using websocket</p>
+    <button mat-flat-button color="warn" (click)="game();">Start Game</button>
+    <p> Connection need to be successfully established before starting the game</p>
+
+    <h1>Your points: {{points}}</h1>
+    <mat-card> 
+        <h2> Game ends in {{counter}} seconds</h2>
+        <h3> Entry Price(Win if stay above after 10s): {{mid}} </h3>
+        <h3>Win Strike Price: {{win}}</h3>
+        <h3>Lose Strike Price: {{lose}}</h3>
+    </mat-card>
+</mat-card>
+
+
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title> <h3> Game Rules</h3></mat-panel-title>
+      </mat-expansion-panel-header>
+    <p> Predict whether asset price will rise or fall – guess correctly to win!. </p>
+    <p>Predict if the price of asset will be higher or lower than it was when the game starts (entry price).</p>
+    <p> <span style="">“Closed Price” </span>  is higher than the “Strike Price” at the end of the 60seconds, you WIN! And if it’s lower, you lose.</p>
+    <p> Or if Current Price touchs than the “Strike Prices” before 60seconds, You win if it first touchs your winning condition vice versa.</p>    </mat-expansion-panel>
+  </mat-accordion>
